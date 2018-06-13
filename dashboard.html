@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Todolist with Firebase</title>
+	<link rel='stylesheet' href='https://bootswatch.com/4/simplex/bootstrap.min.css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<div class="logo">
+					<a class="navbar-brand" href="index.html">
+						<img class="img-responsive" src="https://firebase.google.com/_static/images/firebase/touchicon-180.png" alt="firebase logo">
+					</a>
+				</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarColor03">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#">HOME</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">ABOUT</a>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-lg-0">
+						<i class="material-icons">
+							search
+						</i>
+						<input class="form-control mr-sm-2" type="text" placeholder="Search todo..." id="searchListitem">
+						<a href="#" class="email-holder"></a>
+						<button class="btn btn-secondary my-2 my-sm-0" type="button" id="signOut">Logout</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main role="main">
+		<section id="todo-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 well">
+						<form id="main-form">
+							<div class="form-group">
+								<input type="text" class="form-control mt-3" placeholder="Add todo..." id="todoInput" maxlength="40">
+							</div>
+							<button id="sendFirebase" type="submit" class="btn btn-default pull-right">Add</button>
+						</form>
+						<h5 class="text-center">Uncompleted tasks
+							<i class="material-icons disabled">
+								arrow_downward
+							</i>
+						</h5>
+						<ul class="list-group my-3" id="todoList">
+
+						</ul>
+						<hr>
+						<h5 class="text-center">Completed tasks
+							<i class="material-icons disabled">
+								arrow_downward
+							</i>
+						</h5>
+
+						<ul class="list-group my-3" id="completed">
+
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<div class="section-logo mt-5">
+							<a target="_blank" title="Firebase official site" href="https://firebase.google.com/">
+								<img class="img-responsive" src="https://help.pandasuite.com/resources/AVfYf-idqsg5m25GTXvd/firebase-dot-png" alt="Firebase">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="page-footer font-small bg-dark">
+		<div class="container text-center text-md-left">
+			<div class="row mt-3">
+				<div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+					<div class="logo">
+						<a class="navbar-brand" href="index.html">
+							<img class="img-responsive" src="https://firebase.google.com/_static/images/firebase/touchicon-180.png" alt="firebase logo">
+						</a>
+					</div>
+					<hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<p>Firebase gives you functionality like analytics, databases, messaging and crash reporting so you can move quickly and
+						focus on your users.
+					</p>
+				</div>
+				<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+					<h6 class="text-uppercase font-weight-bold">Products</h6>
+					<p>
+						<a class="dark-grey-text" href="https://firebase.google.com/products/firestore/">Cloud Firestore</a>
+					</p>
+					<p>
+						<a class="dark-grey-text" href="https://firebase.google.com/products/ml-kit/">ML Kit</a>
+					</p>
+					<p>
+						<a class="dark-grey-text" href="https://firebase.google.com/products/auth/">Firebase Authentication</a>
+					</p>
+					<p>
+						<a class="dark-grey-text" href="https://firebase.google.com/products/storage/">Cloud Storage</a>
+					</p>
+					<p>
+						<a class="dark-grey-text" href="https://firebase.google.com/products/realtime-database/">Realtime Database</a>
+					</p>
+
+				</div>
+				<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+					<!-- Links -->
+					<h6 class="text-uppercase font-weight-bold">Useful links</h6>
+					<hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<p>
+						<a class="dark-grey-text disabled" href="#!">Your Account</a>
+					</p>
+					<p>
+						<a class="dark-grey-text disabled" href="#!">Become an Affiliate</a>
+					</p>
+					<p>
+						<a class="dark-grey-text disabled" href="#!">Shipping Rates</a>
+					</p>
+					<p>
+						<a class="dark-grey-text disabled" href="#!">Help</a>
+					</p>
+
+				</div>
+				<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+					<!-- Links -->
+					<h6 class="text-uppercase font-weight-bold">Contact</h6>
+					<hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<p>
+						<i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+					<p>
+						<i class="fa fa-envelope mr-3"></i> info@example.com</p>
+					<p>
+						<i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+					<p>
+						<i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright text-center py-2">© 2018 Copyright:
+			<a href="https://github.com/mirzayev"> Farid Mirzayev</a>
+		</div>
+	</footer>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js'></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+	<script src="functions.js"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>

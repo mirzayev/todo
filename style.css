@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  min-height: 100vh;
+  /* background-color: darkcyan; */
+  padding: 3em;
+  flex: 1;
+}
+footer {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+  color: #e4e4e4;
+}
+a {
+  font-weight: 500;
+  color: #fff;
+  transition: 0.4s;
+}
+a:hover {
+  color: #ffc825 !important;
+  text-decoration: none;
+}
+.textfield {
+  display: none;
+  /* border-radius: 3px; */
+}
+.completed,
+.completed:hover {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.button {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.list-group-item.editMode .textfield {
+  display: block;
+}
+.list-group-item.editMode label {
+  display: none;
+}
+.list-group-item:hover .material-icons {
+  opacity: 1;
+}
+#todoList li,
+#completed li {
+  display: flex;
+  transition: all 0.3s ease-in;
+}
+#todoList li:hover,
+#completed li:hover {
+  background-color: #e4e4e4;
+}
+
+.disabled {
+  pointer-events: none;
+}
+.material-icons {
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in;
+  cursor: pointer;
+}
+.material-delete,
+.material-edit,
+.material-save {
+  transition: color 0.3s ease-in;
+}
+
+.material-delete:hover {
+  color: red;
+}
+.material-edit:hover {
+  color: blue;
+}
+.material-save:hover {
+  color: green;
+}
+
+.email-holder {
+  color: #444;
+  background-color: #e4e4e4;
+  margin: 0 2em;
+  padding: 0.5em 2em;
+  border-radius: 3px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.email-holder:hover {
+  background-color: #ffc825;
+  color: #444 !important;
+}
+
+.well {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
