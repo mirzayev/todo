@@ -18,7 +18,7 @@ $(document).ready(e => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(data => {
-        window.location.href = "../index.html";
+        window.location.href = "../dashboard.html";
       })
       .catch(function(error) {
         const errorMessage = error.message;

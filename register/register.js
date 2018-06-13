@@ -19,7 +19,7 @@ $(document).ready(e => {
       .createUserWithEmailAndPassword(email, password)
       .then(e => {
         auth.signInWithEmailAndPassword(email, password).then(e => {
-          window.location.href = "../index.html";
+          window.location.href = "../dashboard.html";
         });
       })
       .catch(function(error) {
