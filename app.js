@@ -39,7 +39,7 @@
           .auth()
           .signOut()
           .then(e => {
-            window.location.href = "../public/register/login.html";
+            window.location.href = "index.html";
           });
       });
 
